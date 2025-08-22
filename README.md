@@ -1,5 +1,5 @@
 # `tutor`
-Tutoring website. See [elizabethcampbell.co.uk](https://elizabethcampbell.co.uk/)
+Tutoring website. See [elizabethmcampbell.co.uk](https://elizabethmcampbell.co.uk)
 
 ## Running
 
