@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { fullName, email, sections, subjects } from './data/tutoring';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { fullName, email, sections, subjects, whatsAppLink, phoneNumber } from './data/tutoring';
 import { handleNavClick } from './components/Header';
 import React from 'react';
 
@@ -247,7 +247,7 @@ function App() {
         </Paragraph>
         <Paragraph>
           <a href={`mailto:${email}`}><FontAwesomeIcon icon={faEnvelope} className="mr-2" />{email}</a><br />
-          {/* <a href={whatsAppLink}><FontAwesomeIcon icon={faPhone} className="mr-2" />TODO</a> */}
+          <a href={whatsAppLink}><FontAwesomeIcon icon={faPhone} className="mr-2" />{phoneNumber}</a>
         </Paragraph>
         <div className="flex items-center gap-4">
           <a
@@ -257,9 +257,9 @@ function App() {
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
             Send an Email
           </a>
-          {/* <a className="inline-block" aria-label="Chat on WhatsApp" href={whatsAppLink}>
+          <a className="inline-block" aria-label="Chat on WhatsApp" href={whatsAppLink}>
             <img alt="Chat on WhatsApp" src="/WhatsApp/WhatsAppButtonGreenLarge.svg" />
-          </a> */}
+          </a>
         </div>
       </Section>
     </div>

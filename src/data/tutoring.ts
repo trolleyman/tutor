@@ -7,6 +7,12 @@ export const fullName = `${firstName} ${lastName}`;
 
 export const email = "hi@elizabethmcampbell.co.uk";
 
+export const phoneNumber = "+44 7720 879104";
+
+export const whatsAppText = "Hi, I'm interested in tutoring services."
+
+export const whatsAppLink = `https://api.whatsapp.com/send/?phone=${phoneNumber.replace(/\D/g, '')}&text=${encodeURIComponent(whatsAppText)}&type=phone_number&app_absent=0`;
+
 export const sections = {
   about: { id: 'about', name: 'About' },
   subjects: { id: 'subjects', name: 'Subjects' },
