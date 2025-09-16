@@ -40,7 +40,7 @@ function App() {
       </section>
       <Section id={sections.about.id}>
         <Paragraph>
-          Hi! I'm Elizabeth Campbell. I graduated from the University of Cambridge in 2017 with a degree in Human, Social and Political Sciences (HSPS) and have been a full-time private tutor for almost eight years, specialising in the arts and humanities. I mostly work remotely using video conferencing and smart whiteboards, though offer some in-person tuition in London.
+          Hi, my name is Elizabeth Campbell. I graduated from the University of Cambridge in 2017 with a degree in Human, Social and Political Sciences (HSPS) and have been a full-time private tutor for almost eight years, specialising in the arts and humanities. I mostly work remotely using video conferencing and smart whiteboards, though offer some in-person tuition in London.
         </Paragraph>
         <Paragraph>
           I believe strongly in the value that tuition can provide to students of all levels, abilities and ages. The style and content of each of my sessions is highly adaptable, and I pride myself on tailoring each to the individual student, focusing on their personal strengths, weaknesses, learning style, personality and goals, both achievable and aspirational. My students not only improve their grades, but also their confidence, self-knowledge, communication skills and proactivity which they then go on to apply to their wider studies outside of sessions.
@@ -63,7 +63,7 @@ function App() {
           </SubjectParagraph>
           <SubjectSubHeading>KS2 English/SATs</SubjectSubHeading>
           <SubjectParagraph>
-            I have also supported many KS2 English students, often with a goal of 11+ exams, SATs support, or simply to make sure that they are up to national curriculum standard before beginning Year 7. I am adept at making sure that sessions are engaging for younger students, incorporating online tools such as interactive whiteboards and games. I also tailor sessions to their own interests where possible.
+            I have supported many KS2 English students, often with a goal of 11+ exams, SATs support, or simply to make sure that they are up to national curriculum standard before beginning Year 7. I am adept at making sure that sessions are engaging for younger students, incorporating online tools such as interactive whiteboards and games. I also tailor sessions to their own interests where possible.
           </SubjectParagraph>
           <SubjectSubHeading>KS3 English</SubjectSubHeading>
           <SubjectParagraph>
@@ -146,13 +146,29 @@ function App() {
 
         <CollapsibleSubject id={subjects.internationalBaccalaureate.id} name={subjects.internationalBaccalaureate.name}>
           <SubjectParagraph>
-            The International Baccalaureate (IB) is a challenging and rewarding programme that requires students to develop strong analytical and writing skills across multiple subjects. Having tutored IB students in various subjects including History, Theory of Knowledge (TOK), and Extended Essays, I understand the unique requirements and assessment criteria of the IB system.
+            The International Baccalaureate (IB) is a challenging and rewarding programme that requires students to develop strong analytical and writing skills across multiple subjects. Having tutored IB students in various subjects including History, Theory of Knowledge (TOK), and Extended Essays, I understand the unique requirements and assessment criteria of the IB system. 
           </SubjectParagraph>
         </CollapsibleSubject>
 
         <CollapsibleSubject id={subjects.japanese.id} name={subjects.japanese.name}>
           <SubjectParagraph>
-            I offer comprehensive Japanese language tutoring for students at all levels, from beginners to advanced learners. My approach combines traditional language learning with cultural understanding, making sessions both educational and engaging.
+            I offer comprehensive Japanese language tutoring for students at all levels, from beginners to advanced learners. My approach combines traditional language learning with cultural understanding, making sessions both educational and engaging. 
+          </SubjectParagraph>
+          <SubjectSubHeading>Beginner Japanese</SubjectSubHeading>
+          <SubjectParagraph>
+            I often work with students who are just starting out with Japanese. We begin with basic sentence structuring, pronunciation and the written kana systems of hiragana and katakana. Sessions are culturally connected with a contemporary focus, always linking in with the students' personal interest in Japan.
+          </SubjectParagraph>
+          <SubjectSubHeading>Conversational Japanese</SubjectSubHeading>
+          <SubjectParagraph>
+            Many students are looking to improve their spoken Japanese, in order to make the most of a trip, communicate with friends and family, or apply for Japanese-speaking jobs. I tailor vocabulary and grammar to each situation, giving usuable phrases for all scenarios.
+          </SubjectParagraph>
+          <SubjectSubHeading>GCSE Japanese (Edexcel)</SubjectSubHeading>
+          <SubjectParagraph>
+            GCSE Japanese is a well-rounded course, including writing, reading, speaking and listening. I prepare students for all elements of examination, and often run the speaking exams myself. 
+          </SubjectParagraph>
+          <SubjectSubHeading>JLPT Exams</SubjectSubHeading>
+          <SubjectParagraph>
+            The Japanese Language Proficiency Tests are run by the Japanese government, but can be taken all around the world, including in the UK. They are recognised in Japan and are often a requirement for working or living in the country. I support students with the exam technique and vocabulary needed for each level, from N5 to N1. 
           </SubjectParagraph>
         </CollapsibleSubject>
 
