@@ -5,11 +5,11 @@ Tutoring website. See [elizabethmcampbell.co.uk](https://elizabethmcampbell.co.u
 
 Development:
 ```sh
-npm i
-npm run dev
+bun i
+bun run dev
 ```
 
 Production:
 ```sh
-npm build
+bun build
 ```
