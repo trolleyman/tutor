@@ -203,6 +203,8 @@ function App() {
         <CollapsibleSubject id={subjects.mediaStudies.id} name={subjects.mediaStudies.name}>
           <SubjectParagraph>
             Media Studies examines the role of media in society, requiring students to analyze media texts, understand media industries, and explore audience responses. I help students develop critical thinking skills and understand the complex relationship between media and society.
+          <SubjectParagraph>
+            A Level Media Studies explores explores key theoretical frameworks such as representation theory, audience theory, and media ethics. I guide students in analyzing various media forms, including print, digital, and broadcast, helping them develop critical thinking skills, understanding the evolution of media industries, and producing their own creative media projects.
           </SubjectParagraph>
         </CollapsibleSubject>
 
