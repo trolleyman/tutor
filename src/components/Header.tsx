@@ -59,14 +59,14 @@ export function Header() {
   };
 
   return (
-    <header className="bg-white/80 text-blue-900 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
+    <header className="bg-white/90 text-gray-800 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 border-b border-gray-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="header-inner" className="flex justify-between h-16">
           <div className="flex items-center">
             <NavigationLink
               to="/"
               label={fullName}
-              className="text-xl font-semibold hover:text-blue-600 transition-colors"
+              className="text-xl font-semibold text-gray-900 hover:text-blue-600 transition-colors"
               onClick={handleNavClickClose}
             />
           </div>
@@ -78,7 +78,7 @@ export function Header() {
                 key={id}
                 to={`#${id}`}
                 label={name}
-                className="hover:text-blue-600 font-medium transition-colors"
+                className="text-gray-600 hover:text-blue-600 font-medium transition-colors"
                 onClick={handleNavClickClose}
               />
             ))}

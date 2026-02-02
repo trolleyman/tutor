@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { fullName, email, sections, subjects, whatsAppLink, phoneNumber } from './data/tutoring';
-import { handleNavClick } from './components/Header';
+import { Header, handleNavClick } from './components/Header';
 import React from 'react';
 
 import './App.css'
@@ -15,25 +15,30 @@ declare module 'react' {
 function App() {
   return (
     <div className="min-h-screen">
-      <section className="bg-blue-100 py-20 px-4">
-        <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between">
+      <Header />
+      <section className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 pt-32 pb-24 px-4 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl"></div>
+
+        <div className="relative max-w-4xl mx-auto flex flex-col lg:flex-row items-center lg:items-start lg:justify-between">
           <div className="text-center lg:text-left lg:pr-8">
-            <h1 className="text-4xl font-bold mb-2">{fullName}</h1>
-            <div className="inline-block italic text-blue-900 px-2 pt-2 pb-2">
-              <p className="text-xl">
-                Private Tutor | University of Cambridge MA (Hons)
-              </p>
-            </div>
-            <p className="text-lg mt-4">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-3 text-gray-900 tracking-tight">{fullName}</h1>
+            <p className="text-xl text-blue-800 font-medium mb-4">
+              Private Tutor | University of Cambridge MA (Hons)
+            </p>
+            <p className="text-lg text-gray-700 max-w-lg leading-relaxed">
               Specialising in English, Social Sciences, and University Admissions
             </p>
           </div>
-          <div className="mt-8 lg:mt-0 relative">
-            <div className="absolute inset-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur opacity-30"></div>
+          <div className="mt-10 lg:mt-0 relative group">
+            {/* Animated gradient ring */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full blur-sm opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 rounded-full blur-md opacity-30 animate-pulse"></div>
             <img
               src="/headshot.jpg"
               alt={fullName}
-              className="relative w-36 lg:w-48 h-36 lg:h-48 rounded-full shadow-lg object-cover flex-shrink-0"
+              className="relative w-40 lg:w-52 h-40 lg:h-52 rounded-full shadow-xl object-cover flex-shrink-0 ring-4 ring-white"
             />
           </div>
         </div>
@@ -53,7 +58,7 @@ function App() {
         </Paragraph>
       </Section>
 
-      <Section id={sections.subjects.id} title={sections.subjects.name}>
+      <Section id={sections.subjects.id} title={sections.subjects.name} className="bg-gray-50">
         <CollapsibleSubject id={subjects.english.id} name="English">
           <SubjectParagraph>
             English is by far my most popular subject and, therefore, the area in which I have the most experience. Below is a breakdown of all the English qualifications that I currently tutor.
@@ -146,13 +151,13 @@ function App() {
 
         <CollapsibleSubject id={subjects.internationalBaccalaureate.id} name={subjects.internationalBaccalaureate.name}>
           <SubjectParagraph>
-            The International Baccalaureate (IB) is a challenging and rewarding programme that requires students to develop strong analytical and writing skills across multiple subjects. Having tutored IB students in various subjects including History, Theory of Knowledge (TOK), and Extended Essays, I understand the unique requirements and assessment criteria of the IB system. 
+            The International Baccalaureate (IB) is a challenging and rewarding programme that requires students to develop strong analytical and writing skills across multiple subjects. Having tutored IB students in various subjects including History, Theory of Knowledge (TOK), and Extended Essays, I understand the unique requirements and assessment criteria of the IB system.
           </SubjectParagraph>
         </CollapsibleSubject>
 
         <CollapsibleSubject id={subjects.japanese.id} name={subjects.japanese.name}>
           <SubjectParagraph>
-            I offer comprehensive Japanese language tutoring for students at all levels, from beginners to advanced learners. My approach combines traditional language learning with cultural understanding, making sessions both educational and engaging. 
+            I offer comprehensive Japanese language tutoring for students at all levels, from beginners to advanced learners. My approach combines traditional language learning with cultural understanding, making sessions both educational and engaging.
           </SubjectParagraph>
           <SubjectSubHeading>Beginner Japanese</SubjectSubHeading>
           <SubjectParagraph>
@@ -164,11 +169,11 @@ function App() {
           </SubjectParagraph>
           <SubjectSubHeading>GCSE Japanese (Edexcel)</SubjectSubHeading>
           <SubjectParagraph>
-            GCSE Japanese is a well-rounded course, including writing, reading, speaking and listening. I prepare students for all elements of examination, and often run the speaking exams myself. 
+            GCSE Japanese is a well-rounded course, including writing, reading, speaking and listening. I prepare students for all elements of examination, and often run the speaking exams myself.
           </SubjectParagraph>
           <SubjectSubHeading>JLPT Exams</SubjectSubHeading>
           <SubjectParagraph>
-            The Japanese Language Proficiency Tests are run by the Japanese government, but can be taken all around the world, including in the UK. They are recognised in Japan and are often a requirement for working or living in the country. I support students with the exam technique and vocabulary needed for each level, from N5 to N1. 
+            The Japanese Language Proficiency Tests are run by the Japanese government, but can be taken all around the world, including in the UK. They are recognised in Japan and are often a requirement for working or living in the country. I support students with the exam technique and vocabulary needed for each level, from N5 to N1.
           </SubjectParagraph>
         </CollapsibleSubject>
 
@@ -261,27 +266,46 @@ function App() {
         </Paragraph>
       </Section>
 
-      <Section id={sections.contact.id} title={sections.contact.name}>
+      <Section id={sections.contact.id} title={sections.contact.name} className="bg-gradient-to-br from-blue-50 to-indigo-50">
         <Paragraph>
           Please don't hesitate to contact me via email, phone, text, or WhatsApp. I am more than happy to talk through my tuition services with you and discuss next steps!
         </Paragraph>
-        <Paragraph>
-          <a href={`mailto:${email}`}><FontAwesomeIcon icon={faEnvelope} className="mr-2" />{email}</a><br />
-          <a href={whatsAppLink}><FontAwesomeIcon icon={faPhone} className="mr-2" />{phoneNumber}</a>
-        </Paragraph>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row gap-3 text-gray-700 mt-2">
+          <a href={`mailto:${email}`} className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <FontAwesomeIcon icon={faEnvelope} className="text-blue-500" />{email}
+          </a>
+          <span className="hidden sm:inline text-gray-300">|</span>
+          <a href={whatsAppLink} className="flex items-center gap-2 hover:text-blue-600 transition-colors">
+            <FontAwesomeIcon icon={faPhone} className="text-blue-500" />{phoneNumber}
+          </a>
+        </div>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-6">
           <a
             href={`mailto:${email}`}
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-medium shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 hover:-translate-y-0.5"
           >
             <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
             Send an Email
           </a>
-          <a className="inline-block" aria-label="Chat on WhatsApp" href={whatsAppLink}>
-            <img alt="Chat on WhatsApp" src="/WhatsApp/WhatsAppButtonGreenLarge.svg" />
+          <a className="inline-flex items-center justify-center" aria-label="Chat on WhatsApp" href={whatsAppLink}>
+            <img alt="Chat on WhatsApp" src="/WhatsApp/WhatsAppButtonGreenLarge.svg" className="h-14" />
           </a>
         </div>
       </Section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-8 px-4">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} {fullName}. All rights reserved.
+          </p>
+          <nav className="flex gap-6 text-sm">
+            <a href={`#${sections.about.id}`} className="hover:text-white transition-colors" onClick={handleNavClick}>About</a>
+            <a href={`#${sections.subjects.id}`} className="hover:text-white transition-colors" onClick={handleNavClick}>Subjects</a>
+            <a href={`#${sections.contact.id}`} className="hover:text-white transition-colors" onClick={handleNavClick}>Contact</a>
+          </nav>
+        </div>
+      </footer>
     </div>
   );
 };
@@ -293,24 +317,24 @@ export function ContactLink({ children }: React.PropsWithChildren<{}>) {
 }
 
 export function SubjectSubHeading({ children }: React.PropsWithChildren<{}>) {
-  return <h4 className="text-xl italic text-gray-900 mt-2 mb-2">{children}</h4>
+  return <h4 className="text-lg font-semibold text-blue-900 mt-5 mb-2">{children}</h4>
 }
 
 export function SubjectParagraph({ children }: React.PropsWithChildren<{}>) {
-  return <p className="text-gray-800 mb-4">{children}</p>
+  return <p className="text-gray-700 leading-relaxed">{children}</p>
 }
 
 export function SectionHeader({ children }: React.PropsWithChildren<{}>) {
-  return <h2 className="text-3xl font-bold text-gray-900 mb-4">{children}</h2>
+  return <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 tracking-tight">{children}</h2>
 }
 
 export function Paragraph({ children }: React.PropsWithChildren<{}>) {
-  return <p className="text-gray-800">{children}</p>
+  return <p className="text-gray-700 leading-relaxed text-lg">{children}</p>
 }
 
 export function TextLink({ href, children }: React.PropsWithChildren<{ href: string }>) {
   return (
-    <a href={href} className="text-blue-800 hover:text-blue-900 hover:underline" onClick={handleNavClick}>
+    <a href={href} className="text-blue-600 hover:text-blue-800 underline underline-offset-2 decoration-blue-300 hover:decoration-blue-500 transition-colors" onClick={handleNavClick}>
       {children}
     </a>
   );
@@ -319,13 +343,14 @@ export function TextLink({ href, children }: React.PropsWithChildren<{ href: str
 export type SectionProps = React.PropsWithChildren<{
   id: string
   title?: string
+  className?: string
 }>
 
-export function Section({ id, title: name, children }: SectionProps) {
-  return <section className="my-10 px-4" id={id}>
+export function Section({ id, title: name, className = '', children }: SectionProps) {
+  return <section className={`py-16 lg:py-20 px-4 ${className}`} id={id}>
     <div className="max-w-4xl mx-auto">
       {name && <SectionHeader>{name}</SectionHeader>}
-      <div className="space-y-4">
+      <div className="space-y-5">
         {children}
       </div>
     </div>
@@ -375,15 +400,18 @@ function CollapsibleSubject({ id, name, defaultOpen = false, children }: Collaps
   }, [open, children]);
 
   return (
-    <div id={id} className="border rounded-lg bg-white shadow-sm" >
+    <div
+      id={id}
+      className={`border rounded-xl bg-white shadow-sm transition-all duration-300 hover:shadow-md overflow-hidden ${open ? 'border-l-4 border-l-blue-500 border-blue-200' : 'hover:border-blue-200'}`}
+    >
       <button
-        className="w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
+        className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset cursor-pointer group"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
+        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-800 transition-colors">{name}</h3>
         <svg
-          className={`w-5 h-5 ml-2 transition-transform duration-200 ${open ? 'rotate-90' : ''}`}
+          className={`w-5 h-5 ml-2 text-gray-400 group-hover:text-blue-500 transition-all duration-300 ${open ? 'rotate-90 text-blue-500' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -401,7 +429,7 @@ function CollapsibleSubject({ id, name, defaultOpen = false, children }: Collaps
         }}
         aria-hidden={!open}
       >
-        <div className="flex flex-col px-6 pb-4">
+        <div className="flex flex-col px-6 pb-6 pt-2 border-t border-gray-100">
           {children}
         </div>
       </div>
