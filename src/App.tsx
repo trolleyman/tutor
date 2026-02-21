@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
-import { fullName, email, sections, subjects, whatsAppLink, phoneNumber } from './data/tutoring';
+import { fullName, email, sections, subjects, whatsAppLink, phoneNumber, showSubjectIcons } from './data/tutoring';
 import { Header, handleNavClick } from './components/Header';
 import React from 'react';
 
@@ -43,7 +43,7 @@ function App() {
           </div>
         </div>
       </section>
-      <Section id={sections.about.id}>
+      <Section  {...sections.about}>
         <Paragraph>
           Hi, my name is Elizabeth Campbell. I graduated from the University of Cambridge in 2017 with a degree in Human, Social and Political Sciences (HSPS) and have been a full-time private tutor for almost eight years, specialising in the arts and humanities. I mostly work remotely using video conferencing and smart whiteboards, though offer some in-person tuition in London.
         </Paragraph>
@@ -58,8 +58,8 @@ function App() {
         </Paragraph>
       </Section>
 
-      <Section id={sections.subjects.id} title={sections.subjects.name} className="bg-gray-50">
-        <CollapsibleSubject id={subjects.english.id} name="English">
+      <Section {...sections.subjects} className="bg-gray-50">
+        <CollapsibleSubject {...subjects.english} showPreview>
           <SubjectParagraph>
             English is by far my most popular subject and, therefore, the area in which I have the most experience. Below is a breakdown of all the English qualifications that I currently tutor.
           </SubjectParagraph>
@@ -100,7 +100,7 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.sociology.id} name={subjects.sociology.name}>
+        <CollapsibleSubject {...subjects.sociology} showPreview>
           <SubjectParagraph>
             Sociology was my area of specialisation during my time studying Human Social and Political Sciences (<TextLink href="https://www.hsps.cam.ac.uk">HSPS</TextLink>) at the University of Cambridge. As such, it is the area in which I have the most in-depth, expert-level knowledge, allowing me to both support students with their GCSEs and A Levels, but also coach passionate students looking to study the subject at Oxford and Cambridge. Beyond this, I have also supported undergraduate students looking to improve their research skills and essay-writing technique.
           </SubjectParagraph>
@@ -117,7 +117,7 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.oxbridgeApplications.id} name={subjects.oxbridgeApplications.name}>
+        <CollapsibleSubject {...subjects.oxbridgeApplications} showPreview>
           <SubjectParagraph>
             The application process and entry requirements needed to achieve an offer at Oxford or Cambridge are famously opaque. Through my own experience of navigating the system, and seeing many of my students go through the process themselves, I have become highly knowledgeable of each stage of the application process and the variations that individual students can experience.
           </SubjectParagraph>
@@ -143,19 +143,19 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.personalStatements.id} name={subjects.personalStatements.name}>
+        <CollapsibleSubject {...subjects.personalStatements} showPreview>
           <SubjectParagraph>
             Recently, UCAS have drastically changed their application process, introducing a range of questions to replace the traditional personal statement. Using my years of experience supporting students to plan, draft and refine their personal statements, I have now begun to support students for 2026 entry and this new system. This involves taking their experiences and academic insights and concisely selecting the most relevant to include, in a way that flows well as a piece of writing. I take academic integrity very seriously so always make sure this is student-led, whilst I help by providing feedback to nudge them in the direction needed for a successful application.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.internationalBaccalaureate.id} name={subjects.internationalBaccalaureate.name}>
+        <CollapsibleSubject {...subjects.internationalBaccalaureate} showPreview>
           <SubjectParagraph>
             The International Baccalaureate (IB) is a challenging and rewarding programme that requires students to develop strong analytical and writing skills across multiple subjects. Having tutored IB students in various subjects including History, Theory of Knowledge (TOK), and Extended Essays, I understand the unique requirements and assessment criteria of the IB system.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.japanese.id} name={subjects.japanese.name}>
+        <CollapsibleSubject {...subjects.japanese} showPreview>
           <SubjectParagraph>
             I offer comprehensive Japanese language tutoring for students at all levels, from beginners to advanced learners. My approach combines traditional language learning with cultural understanding, making sessions both educational and engaging.
           </SubjectParagraph>
@@ -177,7 +177,7 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.history.id} name={subjects.history.name}>
+        <CollapsibleSubject {...subjects.history} showPreview>
           <SubjectParagraph>
             History is a subject that requires both analytical thinking and strong essay-writing skills. I help students develop the ability to construct coherent arguments, evaluate evidence, and present their ideas clearly and persuasively.
           </SubjectParagraph>
@@ -195,7 +195,7 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.filmStudies.id} name={subjects.filmStudies.name}>
+        <CollapsibleSubject {...subjects.filmStudies} showPreview>
           <SubjectParagraph>
             Film Studies combines creative analysis with theoretical understanding, requiring students to develop both visual literacy and critical thinking skills. I help students understand film language, analyze cinematic techniques, and develop sophisticated arguments about film texts.
           </SubjectParagraph>
@@ -205,7 +205,7 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.mediaStudies.id} name={subjects.mediaStudies.name}>
+        <CollapsibleSubject {...subjects.mediaStudies}>
           <SubjectParagraph>
             Media Studies examines the role of media in society, requiring students to analyze media texts, understand media industries, and explore audience responses. I help students develop critical thinking skills and understand the complex relationship between media and society.
          </SubjectParagraph>
@@ -215,25 +215,25 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.religiousStudies.id} name={subjects.religiousStudies.name}>
+        <CollapsibleSubject {...subjects.religiousStudies}>
           <SubjectParagraph>
             Religious Studies encourages students to explore religious beliefs, practices, and their impact on society. I help students develop critical thinking skills, understand different religious perspectives, and construct balanced arguments about complex ethical and philosophical issues.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.politics.id} name={subjects.politics.name}>
+        <CollapsibleSubject {...subjects.politics}>
           <SubjectParagraph>
             Politics requires students to understand political systems, ideologies, and current affairs. I help students develop analytical skills, understand political concepts, and construct well-reasoned arguments about political issues.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.anthropology.id} name={subjects.anthropology.name}>
+        <CollapsibleSubject {...subjects.anthropology}>
           <SubjectParagraph>
             Anthropology explores human societies and cultures, requiring students to understand different cultural perspectives and develop cross-cultural analytical skills. I help students understand anthropological concepts, research methods, and theoretical frameworks.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.psychology.id} name={subjects.psychology.name}>
+        <CollapsibleSubject {...subjects.psychology}>
           <SubjectParagraph>
             Psychology combines scientific methodology with the study of human behavior and mental processes. I help students understand psychological theories, research methods, and develop critical thinking skills for analyzing psychological research and arguments.
           </SubjectParagraph>
@@ -247,26 +247,26 @@ function App() {
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.philosophy.id} name={subjects.philosophy.name}>
+        <CollapsibleSubject {...subjects.philosophy}>
           <SubjectParagraph>
             Philosophy develops critical thinking and logical reasoning skills, requiring students to analyze complex arguments and construct well-reasoned responses. I help students understand philosophical concepts, develop logical thinking, and perfect their argumentative writing skills.
           </SubjectParagraph>
         </CollapsibleSubject>
 
-        <CollapsibleSubject id={subjects.internationalRelations.id} name={subjects.internationalRelations.name}>
+        <CollapsibleSubject {...subjects.internationalRelations}>
           <SubjectParagraph>
             International Relations examines the relationships between states, international organizations, and global issues. I help students understand international political theory, current global affairs, and develop analytical skills for understanding complex international dynamics.
           </SubjectParagraph>
         </CollapsibleSubject>
       </Section>
 
-      <Section id={sections.pricing.id} title={sections.pricing.name}>
+      <Section {...sections.pricing}>
         <Paragraph>
           On average, I charge £40 hourly. However, this can vary depending on level of subject, demand, location, and other factors. You can request more information by contacting me <ContactLink>below</ContactLink>.
         </Paragraph>
       </Section>
 
-      <Section id={sections.contact.id} title={sections.contact.name} className="bg-gradient-to-br from-blue-50 to-indigo-50">
+      <Section {...sections.contact} className="bg-gradient-to-br from-blue-50 to-indigo-50">
         <Paragraph>
           Please don't hesitate to contact me via email, phone, text, or WhatsApp. I am more than happy to talk through my tuition services with you and discuss next steps!
         </Paragraph>
@@ -360,77 +360,79 @@ export function Section({ id, title: name, className = '', children }: SectionPr
 export type CollapsibleSubjectProps = React.PropsWithChildren<{
   id?: string
   name: string
+  icon?: string
+  showPreview?: boolean
   defaultOpen?: boolean
 }>
 
-function CollapsibleSubject({ id, name, defaultOpen = false, children }: CollapsibleSubjectProps) {
+function CollapsibleSubject({ id, name, icon, showPreview = false, defaultOpen = false, children }: CollapsibleSubjectProps) {
   const [open, setOpen] = React.useState(defaultOpen);
-  const [maxHeight, setMaxHeight] = React.useState<number | undefined>(undefined);
   const contentRef = React.useRef<HTMLDivElement>(null);
+  const [contentHeight, setContentHeight] = React.useState<number | undefined>(undefined);
+  const collapsedHeight = 96; // matches max-h-24 (6rem = 96px)
 
   React.useEffect(() => {
-    let observer: ResizeObserver | undefined;
-    function updateMaxHeight() {
-      if (open && contentRef.current) {
-        setMaxHeight(contentRef.current.scrollHeight);
-      }
-    }
     if (contentRef.current) {
-      observer = new window.ResizeObserver(() => {
-        if (open) {
-          setMaxHeight(contentRef.current!.scrollHeight);
-        }
-      });
-      observer.observe(contentRef.current);
+      setContentHeight(contentRef.current.scrollHeight);
     }
-    updateMaxHeight();
-    return () => {
-      if (observer && contentRef.current) {
-        observer.unobserve(contentRef.current);
-      }
-    };
-  }, [open, children]);
+  }, [children]);
 
-  React.useEffect(() => {
-    if (open && contentRef.current) {
-      setMaxHeight(contentRef.current.scrollHeight);
-    } else {
-      setMaxHeight(0);
-    }
-  }, [open, children]);
+  // For subjects without preview, just show all content
+  if (!showPreview) {
+    return (
+      <div
+        id={id}
+        className="border rounded-xl bg-white shadow-sm transition-all duration-300 hover:shadow-md overflow-hidden hover:border-blue-200"
+      >
+        <div className="px-6 py-5">
+          <h3 className="text-xl font-semibold text-gray-900">
+            {showSubjectIcons && icon && <span className="mr-2">{icon}</span>}
+            {name}
+          </h3>
+          <div className="mt-4 flex flex-col space-y-4 text-gray-700 leading-relaxed">
+            {children}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
       id={id}
-      className={`border rounded-xl bg-white shadow-sm transition-all duration-300 hover:shadow-md overflow-hidden ${open ? 'border-l-4 border-l-blue-500 border-blue-200' : 'hover:border-blue-200'}`}
+      className={`border rounded-xl bg-white shadow-sm transition-all duration-300 hover:shadow-md overflow-hidden cursor-pointer ${open ? 'border-l-4 border-l-blue-500 border-blue-200' : 'hover:border-blue-200'}`}
+      onClick={() => setOpen((o) => !o)}
     >
-      <button
-        className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset cursor-pointer group"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-      >
-        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-800 transition-colors">{name}</h3>
-        <svg
-          className={`w-5 h-5 ml-2 text-gray-400 group-hover:text-blue-500 transition-all duration-300 ${open ? 'rotate-90 text-blue-500' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+      <div className="px-6 py-5">
+        <div className="w-full flex justify-between items-center text-left group">
+          <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-800 transition-colors">
+            {showSubjectIcons && icon && <span className="mr-2">{icon}</span>}
+            {name}
+          </h3>
+          <svg
+            className={`w-5 h-5 ml-2 text-gray-400 group-hover:text-blue-500 transition-all duration-300 flex-shrink-0 ${open ? 'rotate-90 text-blue-500' : ''}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+
+        {/* Content with animated height */}
+        <div
+          className="mt-4 relative overflow-hidden transition-[max-height] duration-400 ease-out"
+          style={{ maxHeight: open ? contentHeight : collapsedHeight }}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      <div
-        ref={contentRef}
-        style={{
-          maxHeight: open ? maxHeight : 0,
-          opacity: open ? 1 : 0,
-          overflow: 'hidden',
-          transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s',
-        }}
-        aria-hidden={!open}
-      >
-        <div className="flex flex-col px-6 pb-6 pt-2 border-t border-gray-100">
-          {children}
+          <div ref={contentRef} className="flex flex-col space-y-4 text-gray-700 leading-relaxed">
+            {children}
+          </div>
+          {/* Gradient fade and "Show more" when collapsed */}
+          <div
+            className={`absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white via-white/90 to-transparent flex items-end justify-end transition-opacity duration-300 ${open ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+          >
+            <span className="text-blue-600 hover:text-blue-800 font-medium text-right">Show more</span>
+          </div>
         </div>
       </div>
     </div>
